@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>양시윤 포트폴리오</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Play:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/jquery.counterup.js"></script>
+    <script src="./js/jquery.counterup.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+  </head>
+  <body>
+    <!-- script -->
+    <script>
+      function fnMove(seq) {
+        let offset = $("#div" + seq).offset();
+        $("html, body").animate({ scrollTop: offset.top - 100 }, 500);
+      }
+    </script>
+    <!-- script -->
+    <!-- 공통css -->
+    <style type="text/css">
+      html {
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        height: 100%;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        font-family: "Poppins", "Noto Sans KR";
+        color: #222;
+      }
+      .inner {
+        width: 1400px;
+        margin: 0 auto;
+      }
+      .headerInner {
+        width: calc(100% - 200px);
+        margin: 0 auto;
+      }
+      .position {
+        width: 100%;
+        height: 100%;
+        display: table;
+      }
+      .middle {
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      select:focus {
+        outline: none;
+      }
+      textarea:focus {
+        outline: none;
+      }
+      input:focus {
+        outline: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        margin: 0;
+      }
+
+      @media screen and (max-width: 1440px) {
+        .inner {
+          width: calc(100% - 40px);
+        }
+        .headerInner {
+          width: calc(100% - 40px);
+        }
+      }
+    </style>
+    <!-- 공통css -->
+
+    <!-- header시작 -->
+    <script type="text/javascript">
+      $(window).scroll(function () {
+        let $el = $("#header");
+
+        if ($(this).scrollTop() >= 10) $el.addClass("active");
+        else $el.removeClass("active");
+      });
+      $(window).scroll(function () {
+        let $el = $(".headerLogo");
+
+        if ($(this).scrollTop() >= 10) $el.addClass("active");
+        else $el.removeClass("active");
+      });
+      $(window).scroll(function () {
+        let $el = $(".headerMenu");
+
+        if ($(this).scrollTop() >= 10) $el.addClass("active");
+        else $el.removeClass("active");
+      });
+      $(window).scroll(function () {
+        let $el = $(".headerPannel");
+
+        if ($(this).scrollTop() >= 10) $el.addClass("active");
+        else $el.removeClass("active");
+      });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".headerLogo").click(function () {
+          $("html, body").animate(
+            {
+              scrollTop: 0,
+            },
+            400
+          );
+          return false;
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      /* header */
+      #header {
+        width: 100%;
+        height: 100px;
+        max-width: 1920px;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        transition: all 0.3s;
+        z-index: 9999;
+      }
+      #header.active {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.8);
+        border-bottom: none;
+      }
+      #header div.headerInner {
+        height: 100%;
+        position: relative;
+      }
+
+      /* headerLogo */
+      .headerLogo {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition: all 0.3s;
+        z-index: 9999;
+      }
+      .headerLogo a {
+        display: block;
+        cursor: pointer;
+      }
+      .headerLogo a h1.logo {
+        font-size: 36px;
+        line-height: 100px;
+        color: #fff;
+        font-family: play;
+        font-weight: 700;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      .headerLogo.active a h1.logo {
+        color: #222;
+        text-shadow: none;
+      }
+
+      /* headerMenu */
+      .headerMenu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.3s;
+        z-index: 9999;
+      }
+      .headerMenu ul {
+        display: flex;
+      }
+      .headerMenu ul li a {
+        display: block;
+        font-size: 18px;
+        line-height: 100px;
+        color: #fff;
+        font-weight: 500;
+        padding: 0 25px;
+        cursor: pointer;
+      }
+      .headerMenu ul li a.last {
+        padding-right: 0;
+      }
+      .headerMenu.active ul li a {
+        color: #222;
+      }
+
+      /* headerPannel */
+      .headerPannel {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        transition: all 0.3s;
+        z-index: 9999;
+        display: none;
+      }
+      .headerPannel a {
+        display: block;
+        cursor: pointer;
+      }
+      .headerPannel a span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        margin-bottom: 6px;
+      }
+      .headerPannel.active a span {
+        background-color: #222;
+        box-shadow: none;
+      }
+      .headerPannel a span:last-child {
+        margin-bottom: 0;
+      }
+
+      /* 반응형 */
+      @media screen and (max-width: 1200px) {
+        .headerMenu ul li a {
+          font-size: 16px;
+          padding: 0 20px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        #header {
+          height: 80px;
+        }
+        .headerLogo a h1.logo {
+          font-size: 24px;
+          line-height: 80px;
+        }
+        .headerMenu {
+          display: none;
+        }
+        /* .headerMenu ul li a {
+          font-size: 14px;
+          line-height: 80px;
+          padding: 0 10px;
+        } */
+        .headerPannel {
+          display: block;
+        }
+        .headerPannel a span {
+          height: 2px;
+          border-radius: 1px;
+          width: 26px;
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+
+    <header id="header">
+      <div class="headerInner">
+        <!-- headerLogo시작 -->
+        <div class="headerLogo">
+          <a href="#">
+            <h1 class="logo">SIYUN</h1>
+          </a>
+        </div>
+        <!-- headerLogo끝 -->
+
+        <!-- headerMenu시작 -->
+        <div class="headerMenu">
+          <ul>
+            <li>
+              <a onclick="fnMove(1)">Intro</a>
+            </li>
+            <li>
+              <a onclick="fnMove(2)">Project</a>
+            </li>
+            <li>
+              <a onclick="fnMove(3)">Intoduce</a>
+            </li>
+            <li>
+              <a class="last" onclick="fnMove(4)">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- headerMenu끝 -->
+
+        <!-- headerPannel시작 -->
+        <div class="headerPannel">
+          <a>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+        <!-- headerPannel끝 -->
+      </div>
+    </header>
+    <!-- header끝 -->
+
+    <!-- gnb시작 -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".headerPannel a").click(function () {
+          $(".gnb").addClass("active");
+        });
+        $(".gnbClose a, .gnbBody ul li a").click(function () {
+          $(".gnb").removeClass("active");
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      /* gnb */
+      .gnb {
+        display: none;
+        width: 40%;
+        height: 100%;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10001;
+        background-color: #f9f9f9;
+        border-left: 20px solid #4b89dc;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+      .gnb.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* gnbHeader */
+      .gnbHeader {
+        width: 100%;
+        height: 80px;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      /* gnbClose */
+      .gnbClose {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+      }
+      .gnbClose a {
+        display: block;
+        cursor: pointer;
+      }
+      .gnbClose a img {
+        display: block;
+        width: 25px;
+        height: auto;
+      }
+
+      /* gnbBody */
+      .gnbBody {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 100px 20px 0 20px;
+      }
+      .gnbBody ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .gnbBody ul li {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        transition: all 0.5s;
+      }
+      .gnbBody ul li:hover {
+        border-bottom: 1px solid #4b89dc;
+      }
+      .gnbBody ul li a {
+        display: block;
+        font-size: 20px;
+        line-height: 80px;
+        color: #222;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+      .gnbBody ul li:hover a {
+        color: #4b89dc;
+      }
+
+      /* gnbFooter */
+      .gnbFooter {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 50px 20px 0 20px;
+      }
+      .gnbFooter h3.title {
+        font-size: 20px;
+        line-height: 20px;
+        color: #222;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+      .gnbFooter ul {
+        display: flex;
+      }
+      .gnbFooter ul li {
+        margin-right: 20px;
+      }
+      .gnbFooter ul li a {
+        display: block;
+      }
+      .gnbFooter ul li a img.call {
+        width: 20px;
+        display: block;
+      }
+      .gnbFooter ul li a img.mail {
+        width: 27px;
+        display: block;
+      }
+      .gnbFooter ul li:last-child {
+        margin-right: 0;
+      }
+
+      /* 반응형 */
+      @media screen and (max-width: 768px) {
+        .gnb {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 525px) {
+        .gnb {
+          width: 50%;
+        }
+        .gnbBody {
+          padding: 50px 20px 0 20px;
+        }
+      }
+    </style>
+
+    <div class="gnb">
+      <!-- gnbHeader시작 -->
+      <div class="gnbHeader">
+        <!-- gnbClose시작 -->
+        <div class="gnbClose">
+          <a>
+            <img src="./images/gnbClose.png" alt="전체메뉴닫기" />
+          </a>
+        </div>
+        <!-- gnbClose끝 -->
+      </div>
+      <!-- gnbHeader끝 -->
+
+      <!-- gnbBody시작 -->
+      <div class="gnbBody">
+        <ul>
+          <li>
+            <a onclick="fnMove(1)">INTRO</a>
+          </li>
+          <li>
+            <a onclick="fnMove(2)">PROJECT</a>
+          </li>
+          <li>
+            <a onclick="fnMove(3)">INTRODUCE</a>
+          </li>
+          <li>
+            <a onclick="fnMove(4)">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+      <!-- gnbBody끝 -->
+
+      <!-- gnbFooter시작 -->
+      <div class="gnbFooter">
+        <h3 class="title">INFO</h3>
+        <ul>
+          <li>
+            <a href="tel:010-9757-1994">
+              <img class="call" src="./images/mainRow4Img2.png" />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:y940407@naver.com">
+              <img class="mail" src="./images/mainRow4Img3.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- gnbFooter끝 -->
+    </div>
+    <!-- gnb끝 -->
+
+    <!-- mainSlider시작 -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".mainSlider").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: "linear",
+          autoplay: true,
+          autoplaySpeed: 5000,
+          pauseOnHover: false,
+          prevArrow: $("#mainPrev"),
+          nextArrow: $("#mainNext"),
+          dotsClass: "custom_paging",
+          customPaging: function (slider, i) {
+            //FYI just have a look at the object to find aviable information
+            //press f12 to access the console
+            //you could also debug or look in the source
+            console.log(slider);
+            return i + 1 + "/" + slider.slideCount;
+          },
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                draggable: true,
+              },
+            },
+          ], //반응형, breakpoint: 반응형 구간, settings: 반응형 구간에 따른 설정 변경
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      /* slick지정 */
+      .mainSlider .slick-list,
+      .mainSlider .slick-track,
+      .mainSlider .slick-slide > div {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* mainSliderBg */
+      .mainSliderBg {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* mainSlider */
+      .mainSlider {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .mainSlider div.slider {
+        width: 100%;
+        height: 100%;
+      }
+      .mainSlider div.slider img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+      }
+
+      /* sliderText */
+      .sliderText {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 15;
+      }
+      .sliderText h3 {
+        font-size: 60px;
+        line-height: 60px;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+        text-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+      }
+      .sliderText h3 span {
+        font-weight: 600;
+        color: #4b89dc;
+      }
+      .sliderText p {
+        font-size: 18px;
+        line-height: 18px;
+        color: #fff;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 2px;
+        text-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+      }
+      .mainSlider div.slick-slide.slick-active div.sliderText h3 {
+        animation: sliderText 2s;
+        animation-fill-mode: both;
+      }
+      .mainSlider div.slick-slide.slick-active div.sliderText p {
+        animation: sliderText 2s;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+      }
+      .mainSlider
+        div.slick-slide.slick-active
+        div.sliderText
+        h3
+        span:nth-child(1) {
+        animation: sliderText2 2s;
+        animation-fill-mode: both;
+        animation-delay: 0.5s;
+      }
+      .mainSlider
+        div.slick-slide.slick-active
+        div.sliderText
+        h3
+        span:nth-child(2) {
+        animation: sliderText2 2s;
+        animation-fill-mode: both;
+        animation-delay: 0.7s;
+      }
+
+      /* custom_paging */
+      .custom_paging {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+        z-index: 15;
+      }
+      .custom_paging li {
+        display: none;
+        font-size: 18px;
+        line-height: 18px;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .custom_paging li.slick-active {
+        display: block;
+      }
+
+      /* mainArrow */
+      #mainPrev {
+        position: absolute;
+        display: flex;
+        left: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #mainPrev a {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+      #mainPrev a:hover {
+        transform: translateX(-10px);
+      }
+      #mainPrev a img {
+        display: block;
+        margin: 0 auto;
+      }
+      #mainPrev p {
+        font-size: 20px;
+        line-height: 60px;
+        color: #fff;
+        font-weight: 600;
+      }
+      #mainNext {
+        position: absolute;
+        display: flex;
+        right: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #mainNext a {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+      #mainNext a:hover {
+        transform: translateX(10px);
+      }
+      #mainNext a img {
+        display: block;
+        margin: 0 auto;
+      }
+      #mainNext p {
+        font-size: 20px;
+        line-height: 60px;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* 애니메이션 */
+      @keyframes sliderText {
+        0% {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes sliderText2 {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* 반응형 */
+      @media screen and (max-width: 1440px) {
+        .sliderText h3 {
+          font-size: 30px;
+          line-height: 40px;
+        }
+        .sliderText p {
+          font-size: 20px;
+          line-height: 30px;
+        }
+        #mainPrev {
+          left: 20px;
+        }
+        #mainPrev a {
+          width: 50px;
+          height: 50px;
+        }
+        #mainPrev p {
+          font-size: 18px;
+          line-height: 50px;
+        }
+        #mainNext {
+          right: 20px;
+        }
+        #mainNext a {
+          width: 50px;
+          height: 50px;
+        }
+        #mainNext p {
+          font-size: 18px;
+          line-height: 50px;
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        .mainSliderBg {
+          height: 800px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .mainSliderBg {
+          height: 600px;
+        }
+        .sliderText h3 {
+          font-size: 25px;
+          line-height: 35px;
+        }
+        .sliderText p {
+          font-size: 16px;
+          line-height: 26px;
+        }
+        #mainPrev {
+          bottom: 20px;
+          top: auto;
+          transform: translateY(0);
+        }
+        #mainPrev p {
+          display: none;
+        }
+        #mainNext {
+          bottom: 20px;
+          top: auto;
+          transform: translateY(0);
+        }
+        #mainNext p {
+          display: none;
+        }
+        .custom_paging li {
+          font-size: 15px;
+          line-height: 15px;
+        }
+      }
+    </style>
+
+    <div class="mainSliderBg">
+      <div class="mainSlider">
+        <div class="slider">
+          <img src="./images/mainSlider1.png" alt="메인슬라이더이미지1" />
+          <div class="sliderText">
+            <div class="position">
+              <div class="middle">
+                <h3>
+                  새로운 것에 대한 <span>도</span><span>전</span>을 좋아합니다
+                </h3>
+                <p>항상 창의적이고 도전하겠습니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="./images/mainSlider2.png" alt="메인슬라이더이미지2" />
+          <div class="sliderText">
+            <div class="position">
+              <div class="middle">
+                <h3>끊임없는 <span>변</span><span>화</span>를 시도합니다</h3>
+                <p>항상 창의적이고 도전하겠습니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="./images/mainSlider3.png" alt="메인슬라이더이미지3" />
+          <div class="sliderText">
+            <div class="position">
+              <div class="middle">
+                <h3>우리 모두의 <span>성</span><span>공</span>을 열망합니다</h3>
+                <p>항상 창의적이고 도전하겠습니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- mainArrow시작 -->
+      <div class="mainArrow">
+        <div id="mainPrev">
+          <a>
+            <div class="position">
+              <div class="middle">
+                <img src="./images/mainPrev.png" alt="왼쪽버튼" />
+              </div>
+            </div>
+          </a>
+          <p>PREV</p>
+        </div>
+        <div id="mainNext">
+          <p>NEXT</p>
+          <a>
+            <div class="position">
+              <div class="middle">
+                <img src="./images/mainNext.png" alt="오른쪽버튼" />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- mainArrow끝 -->
+    </div>
+    <!-- mainSlider끝 -->
+
+    <!-- mainRow1시작 -->
+    <script>
+      jQuery(document).ready(function ($) {
+        $(".counter").counterUp({
+          delay: 10,
+          time: 1000,
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      .mainRow1 {
+        padding: 150px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .mainRow1 p.bg1 {
+        font-size: 150px;
+        line-height: 150px;
+        color: #f2f2f2;
+        font-weight: 800;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        text-overflow: clip;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 1900px;
+        -webkit-animation-name: marquee;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 50s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-name: marquee;
+        -moz-animation-timing-function: linear;
+        -moz-animation-duration: 50s;
+        -moz-animation-iteration-count: infinite;
+        -ms-animation-name: marquee;
+        -ms-animation-timing-function: linear;
+        -ms-animation-duration: 50s;
+        -ms-animation-iteration-count: infinite;
+        -o-animation-name: marquee;
+        -o-animation-timing-function: linear;
+        -o-animation-duration: 50s;
+        -o-animation-iteration-count: infinite;
+        animation-name: marquee;
+        animation-timing-function: linear;
+        animation-duration: 50s;
+        animation-iteration-count: infinite;
+      }
+      .mainRow1 p.bg2 {
+        font-size: 150px;
+        line-height: 150px;
+        color: #f2f2f2;
+        font-weight: 800;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        text-overflow: clip;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 1900px;
+        margin-left: 1950px;
+        -webkit-animation-name: marquee;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 50s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-name: marquee;
+        -moz-animation-timing-function: linear;
+        -moz-animation-duration: 50s;
+        -moz-animation-iteration-count: infinite;
+        -ms-animation-name: marquee;
+        -ms-animation-timing-function: linear;
+        -ms-animation-duration: 50s;
+        -ms-animation-iteration-count: infinite;
+        -o-animation-name: marquee;
+        -o-animation-timing-function: linear;
+        -o-animation-duration: 50s;
+        -o-animation-iteration-count: infinite;
+        animation-name: marquee;
+        animation-timing-function: linear;
+        animation-duration: 50s;
+        animation-iteration-count: infinite;
+      }
+      .mainRow1 p.bg3 {
+        font-size: 150px;
+        line-height: 150px;
+        color: #f2f2f2;
+        font-weight: 800;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        text-overflow: clip;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 1900px;
+        margin-left: 3900px;
+        -webkit-animation-name: marquee;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 50s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-name: marquee;
+        -moz-animation-timing-function: linear;
+        -moz-animation-duration: 50s;
+        -moz-animation-iteration-count: infinite;
+        -ms-animation-name: marquee;
+        -ms-animation-timing-function: linear;
+        -ms-animation-duration: 50s;
+        -ms-animation-iteration-count: infinite;
+        -o-animation-name: marquee;
+        -o-animation-timing-function: linear;
+        -o-animation-duration: 50s;
+        -o-animation-iteration-count: infinite;
+        animation-name: marquee;
+        animation-timing-function: linear;
+        animation-duration: 50s;
+        animation-iteration-count: infinite;
+      }
+      .mainRow1 h3.title {
+        font-size: 50px;
+        line-height: 50px;
+        color: #222;
+        font-weight: 800;
+        margin-bottom: 100px;
+      }
+      .mainRow1 h3.title span {
+        color: #4b89dc;
+      }
+
+      /* row1Box */
+      .row1Box ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .row1Box ul li {
+        width: 150px;
+        margin-right: 150px;
+      }
+      .row1Box ul li p {
+        font-size: 16px;
+        line-height: 16px;
+        color: #222;
+        font-weight: 400;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .row1Box ul li h3 {
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 300;
+        text-align: center;
+        color: #222;
+      }
+      .row1Box ul li h3 span {
+        font-size: 80px;
+        line-height: 80px;
+        font-weight: 800;
+      }
+
+      /* animation */
+      @-webkit-keyframes marquee {
+        from {
+          -webkit-transform: translateX(-40%) translateY(-50%);
+        }
+        100% {
+          -webkit-transform: translateX(-245%) translateY(-50%);
+        }
+      }
+      @-moz-keyframes marquee {
+        from {
+          -webkit-transform: translateX(-40%) translateY(-50%);
+        }
+        100% {
+          -webkit-transform: translateX(-245%) translateY(-50%);
+        }
+      }
+      @-ms-keyframes marquee {
+        from {
+          -webkit-transform: translateX(-40%) translateY(-50%);
+        }
+        100% {
+          -webkit-transform: translateX(-245%) translateY(-50%);
+        }
+      }
+      @-o-keyframes marquee {
+        from {
+          -webkit-transform: translateX(-40%) translateY(-50%);
+        }
+        100% {
+          -webkit-transform: translateX(-245%) translateY(-50%);
+        }
+      }
+      @keyframes marquee {
+        from {
+          -webkit-transform: translateX(-40%) translateY(-50%);
+        }
+        100% {
+          -webkit-transform: translateX(-245%) translateY(-50%);
+        }
+      }
+
+      /* 반응형 */
+      @media screen and (max-width: 1440px) {
+        .mainRow1 h3.title {
+          font-size: 40px;
+          line-height: 40px;
+        }
+        .row1Box ul li {
+          margin-right: 100px;
+        }
+        .row1Box ul li:last-child {
+          margin-right: 0;
+        }
+        .row1Box ul li h3 span {
+          font-size: 60px;
+          line-height: 60px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .mainRow1 {
+          padding: 100px 0;
+        }
+        .mainRow1 h3.title {
+          font-size: 30px;
+          line-height: 40px;
+          text-align: center;
+          margin-bottom: 50px;
+        }
+        .row1Box ul {
+          justify-content: center;
+        }
+        .row1Box ul li {
+          width: 33.333333%;
+          margin-right: 0;
+        }
+        .row1Box ul li p {
+          font-size: 14px;
+          line-height: 14px;
+        }
+        .row1Box ul li h3 {
+          font-size: 20px;
+          line-height: 20px;
+        }
+        .row1Box ul li h3 span {
+          font-size: 40px;
+          line-height: 40px;
+        }
+      }
+    </style>
+
+    <div class="mainRow1" id="div1">
+      <p class="bg1">YANG SIYUN PORTFOLIO</p>
+      <p class="bg2">YANG SIYUN PORTFOLIO</p>
+      <p class="bg3">YANG SIYUN PORTFOLIO</p>
+      <div class="inner">
+        <h3 class="title">The Number of <span>Homepage</span></h3>
+        <div class="row1Box">
+          <ul>
+            <li>
+              <p>홍보용</p>
+              <h3><span class="counter">15</span>+α개</h3>
+            </li>
+            <li>
+              <p>쇼핑몰</p>
+              <h3><span class="counter">10</span>+α개</h3>
+            </li>
+            <li>
+              <p>경력</p>
+              <h3><span class="counter">15</span>개월</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- mainRow1끝 -->
+
+    <!-- mainRow2시작 -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".row2Slider").slick({
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+          speed: 1000,
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          draggable: true,
+          pauseOnFocus: false,
+          pauseOnHover: false,
+          pauseOnDotsHover: false,
+          pauseOnDotsFocus: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplaySpeed: 3000,
+              },
+            },
+          ], //반응형, breakpoint: 반응형 구간, settings: 반응형 구간에 따른 설정 변경
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      .mainRow2 {
+        background-color: #f9f9f9;
+        padding: 150px 0;
+      }
+      .mainRow2 ul.one {
+        display: flex;
+      }
+      .mainRow2 ul.one li.first {
+        width: 30%;
+      }
+      .mainRow2 ul.one li.first h3 {
+        font-size: 50px;
+        line-height: 50px;
+        color: #222;
+        font-weight: 900;
+        margin-bottom: 20px;
+      }
+      .mainRow2 ul.one li.first h3 span {
+        color: #4b89dc;
+      }
+      .mainRow2 ul.one li.first p {
+        font-size: 16px;
+        line-height: 26px;
+        color: #575757;
+        font-weight: 400;
+        margin-bottom: 40px;
+      }
+      .mainRow2 ul.one li.last {
+        width: calc(70% - 40px);
+        margin-left: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* row2Btn */
+      .row2Btn {
+        width: 250px;
+        height: 50px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+      .row2Btn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-150%, -50%);
+        background-color: #4b89dc;
+        z-index: 0;
+        transition: all 0.5s;
+      }
+      .row2Btn:hover {
+        border: 1px solid #4b89dc;
+      }
+      .row2Btn:hover::before {
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .row2Btn:hover a {
+        color: #fff;
+      }
+      .row2Btn a {
+        font-size: 14px;
+        line-height: 48px;
+        color: #222;
+        font-weight: 500;
+        display: block;
+        padding-left: 30px;
+        letter-spacing: 0.5px;
+        position: relative;
+        z-index: 5;
+      }
+
+      /* row2Slider */
+      .row2Slider {
+        position: relative;
+      }
+      .row2Slider div.slider2 {
+        width: calc(100% - 20px);
+        margin-right: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .row2Slider div.slider2 img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* slick-dots */
+      .row2Slider .slick-dots {
+        display: flex;
+        width: calc(100% - 20px);
+        margin-top: 20px;
+      }
+      .row2Slider .slick-dots li {
+        width: 12.5%;
+        height: 5px;
+        box-sizing: border-box;
+      }
+      .row2Slider .slick-dots li button {
+        border: 0;
+        font-size: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #ddd;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .row2Slider .slick-dots li button:hover {
+        background-color: #888;
+      }
+      .row2Slider .slick-dots li.slick-active button {
+        background-color: #888;
+      }
+
+      /* 반응형 */
+      @media screen and (max-width: 1440px) {
+        .mainRow2 ul.one li.first h3 {
+          font-size: 40px;
+          line-height: 40px;
+        }
+        .mainRow2 ul.one li.first p {
+          font-size: 15px;
+          line-height: 25px;
+        }
+        .row2Btn {
+          width: 200px;
+          height: 40px;
+        }
+        .row2Btn a {
+          line-height: 38px;
+          padding-left: 20px;
+          letter-spacing: 0;
+        }
+      }
+
+      @media screen and (max-width: 1300px) {
+        .mainRow2 ul.one li.first p br {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 1080px) {
+        .mainRow2 ul.one li.first h3 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+        .mainRow2 ul.one li.first p {
+          margin-bottom: 30px;
+        }
+        .row2Btn {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .mainRow2 {
+          padding: 100px 0;
+        }
+        .mainRow2 ul.one {
+          flex-direction: column;
+        }
+        .mainRow2 ul.one li.first {
+          width: 100%;
+          margin-bottom: 40px;
+        }
+        .mainRow2 ul.one li.first h3 {
+          font-size: 26px;
+          line-height: 26px;
+        }
+        .mainRow2 ul.one li.first p {
+          font-size: 14px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        .mainRow2 ul.one li.last {
+          width: 100%;
+          margin-left: 0;
+        }
+        .row2Slider div.slider2 {
+          width: 100%;
+          margin-right: 0;
+        }
+        .row2Slider .slick-dots {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <div class="mainRow2" id="div2">
+      <div class="inner">
+        <ul class="one">
+          <li class="first">
+            <div class="position">
+              <div class="middle">
+                <h3>The <span>Project</span></h3>
+                <p>
+                  그동안 만든 프로젝트들입니다. 프로젝트 관련 궁금하신 점이<br />
+                  있으시면 아래 번호로 연락 주시면 감사하겠습니다.<br />
+                  최대한 빠른 시일 내에 답변해 드리겠습니다.
+                </p>
+                <div class="row2Btn">
+                  <a href="#none">Download Resume</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="last">
+            <div class="row2Slider">
+              <div class="slider2">
+                <a href="http://www.sunglim.com/home/index.php" target="_blank">
+                  <img src="./images/mainProject1.png" />
+                </a>
+              </div>
+              <div class="slider2">
+                <a href="http://sunwood-kr.com/home/index.php" target="_blank">
+                  <img src="./images/mainProject2.png" />
+                </a>
+              </div>
+              <div class="slider2">
+                <a href="http://jungwoo4848.com/home/index.php" target="_blank">
+                  <img src="./images/mainProject3.png" />
+                </a>
+              </div>
+              <div class="slider2">
+                <a href="http://www.dmoon.kr/home/index.php" target="_blank">
+                  <img src="./images/mainProject4.png" />
+                </a>
+              </div>
+              <div class="slider2">
+                <a href="http://senelix.com/home/index.php" target="_blank">
+                  <img src="./images/mainProject5.png" />
+                </a>
+              </div>
+              <div class="slider2">
+                <a href="https://www.shona.kr/mall/index.php" target="_blank">
+                  <img src="./images/mainProject6.png" />
+                </a>
+              </div>
+              <div class="slider2">
+                <a
+                  href="http://bistosbaby.co.kr/home/index.php"
+                  target="_blank"
+                >
+                  <img src="./images/mainProject7.png" />
+                </a>
+              </div>
+              <div class="slider2">
+                <a
+                  href="http://xn--9n2b27ck8ghoaj3cx3h0rc8x4b.com/home/index.php"
+                  target="_blank"
+                >
+                  <img src="./images/mainProject8.png" />
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- mainRow2끝 -->
+
+    <!-- mainRow3시작 -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          let $el = $(".mainRow3 ul.one li.first img");
+
+          if ($(this).scrollTop() >= 1900) $el.addClass("shown");
+        });
+      });
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          let $el = $(".mainRow3 ul.two li.last img");
+
+          if ($(this).scrollTop() >= 2400) $el.addClass("shown");
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      .mainRow3 {
+        padding: 150px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .mainRow3::before {
+        content: "";
+        display: block;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 4px dotted #4b89dc;
+        position: absolute;
+        z-index: -2;
+        top: 100px;
+        right: -10%;
+        transform: translateX(50%);
+        opacity: 0.3;
+        animation: circle_rotate 120s linear infinite;
+      }
+      .mainRow3::after {
+        content: "";
+        display: block;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 4px dotted #575757;
+        position: absolute;
+        z-index: -1;
+        top: 100px;
+        right: -20%;
+        transform: translateX(50%);
+        opacity: 0.3;
+        animation: circle_rotate2 120s linear infinite;
+      }
+      .mainRow3 h3.title {
+        font-size: 50px;
+        line-height: 50px;
+        color: #222;
+        font-weight: 900;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .mainRow3 h3.title span {
+        color: #4b89dc;
+      }
+      .mainRow3 ul.one {
+        display: flex;
+        margin-bottom: 50px;
+      }
+      .mainRow3 ul.one li.first {
+        width: calc(50% - 20px);
+        margin-right: 40px;
+      }
+      .mainRow3 ul.one li.first img {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        visibility: hidden;
+      }
+      .mainRow3 ul.one li.first img.shown {
+        visibility: visible;
+        animation: fadeInLeft 1s;
+      }
+      .mainRow3 ul.one li.last {
+        width: calc(50% - 20px);
+        margin-right: 0;
+      }
+      .mainRow3 ul.one li.last p {
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #575757;
+      }
+      .mainRow3 ul.two {
+        display: flex;
+        margin-bottom: 0;
+      }
+      .mainRow3 ul.two li.first {
+        width: calc(50% - 20px);
+        margin-right: 40px;
+      }
+      .mainRow3 ul.two li.last img {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        visibility: hidden;
+      }
+      .mainRow3 ul.two li.last img.shown {
+        visibility: visible;
+        animation: fadeInRight 1s;
+      }
+      .mainRow3 ul.two li.last {
+        width: calc(50% - 20px);
+        margin-right: 0;
+      }
+      .mainRow3 ul.two li.first p {
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #575757;
+        text-align: right;
+      }
+
+      /* row3Text */
+      .row3Text {
+        position: relative;
+      }
+      .row3Text h4 {
+        font-size: 100px;
+        font-weight: 800;
+        line-height: 100px;
+        color: #efefef;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        top: -80px;
+      }
+      .row3Text h3 {
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 500;
+        color: #222;
+        margin-bottom: 20px;
+      }
+
+      /* row3Text2 */
+      .row3Text2 {
+        position: relative;
+      }
+      .row3Text2 h4 {
+        font-size: 100px;
+        font-weight: 800;
+        line-height: 100px;
+        color: #efefef;
+        text-align: right;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        top: -80px;
+      }
+      .row3Text2 h3 {
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 500;
+        color: #222;
+        margin-bottom: 20px;
+        text-align: right;
+      }
+
+      /* animation */
+      @keyframes circle_rotate {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      @keyframes circle_rotate2 {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* 반응형 */
+      @media screen and (max-width: 1440px) {
+        .mainRow3 h3.title {
+          font-size: 40px;
+          line-height: 40px;
+        }
+        .mainRow3::before {
+          width: 600px;
+          height: 600px;
+        }
+        .mainRow3::after {
+          width: 600px;
+          height: 600px;
+        }
+        .row3Text h4 {
+          font-size: 80px;
+          line-height: 80px;
+          top: -60px;
+        }
+        .row3Text h3 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+        .row3Text2 h4 {
+          font-size: 80px;
+          line-height: 80px;
+          top: -60px;
+        }
+        .row3Text2 h3 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      @media screen and (max-width: 1080px) {
+        .mainRow3 h3.title {
+          font-size: 28px;
+          line-height: 28px;
+        }
+        .mainRow3::before {
+          width: 400px;
+          height: 400px;
+        }
+        .mainRow3::after {
+          width: 400px;
+          height: 400px;
+        }
+        .row3Text h4 {
+          font-size: 70px;
+          line-height: 70px;
+          top: -50px;
+        }
+        .row3Text2 h4 {
+          font-size: 70px;
+          line-height: 70px;
+          top: -50px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .mainRow3 {
+          padding: 100px 0;
+        }
+        .mainRow3 h3.title {
+          font-size: 22px;
+          line-height: 22px;
+          margin-bottom: 20px;
+        }
+        .mainRow3::before {
+          top: 50px;
+          width: 200px;
+          height: 200px;
+        }
+        .mainRow3::after {
+          top: 50px;
+          width: 200px;
+          height: 200px;
+        }
+        .mainRow3 ul.one {
+          flex-direction: column;
+          margin-bottom: 30px;
+        }
+        .mainRow3 ul.one li.first {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+        .mainRow3 ul.one li.first img {
+          visibility: visible;
+        }
+        .mainRow3 ul.one li.last {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+        .mainRow3 ul.two li.last img {
+          visibility: visible;
+        }
+        .row3Text h4 {
+          font-size: 40px;
+          line-height: 40px;
+          top: -20px;
+        }
+        .row3Text h3 {
+          font-size: 16px;
+          line-height: 26px;
+        }
+        .mainRow3 ul.one li.last p {
+          font-size: 14px;
+          line-height: 24px;
+        }
+        .mainRow3 ul.two {
+          flex-direction: column;
+        }
+        .mainRow3 ul.two li.first {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 30px;
+          order: 2;
+        }
+        .mainRow3 ul.two li.last {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 30px;
+          order: 1;
+        }
+        .row3Text2 h4 {
+          font-size: 40px;
+          line-height: 40px;
+          top: -20px;
+          left: 0;
+          text-align: left;
+        }
+        .row3Text2 h3 {
+          font-size: 16px;
+          line-height: 26px;
+          text-align: left;
+        }
+        .mainRow3 ul.two li.first p {
+          font-size: 14px;
+          line-height: 24px;
+          text-align: left;
+        }
+      }
+    </style>
+
+    <div class="mainRow3" id="div3">
+      <div class="inner">
+        <h3 class="title">The <span>Introduce</span></h3>
+        <ul class="one">
+          <li class="first">
+            <img src="./images/mainRow3Img1.png" alt="introText" />
+          </li>
+          <li class="last">
+            <div class="position">
+              <div class="middle">
+                <div class="row3Text">
+                  <h4>01</h4>
+                  <h3>
+                    새로운 것에 항상 도전하며 더 나은 사람이 되기 위해 노력하는
+                    사람.
+                  </h3>
+                </div>
+                <p>
+                  새로운 것에 대한 두려움보다는 그것을 극복할 수 있다는
+                  마음가짐과 현실에 안주하지 않고 더 좋은 미래를 향한 끊임없는
+                  개발을 시도합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="two">
+          <li class="first">
+            <div class="position">
+              <div class="middle">
+                <div class="row3Text2">
+                  <h4>02</h4>
+                  <h3>상대를 존중하고 나와 다름을 수용할 수 있는 사람.</h3>
+                </div>
+                <p>
+                  나와의 다름을 인정하고 수용할 줄 아는 마음, 항상 열린 마음으로
+                  세상을 듣고자 합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="last">
+            <img src="./images/mainRow3Img2.png" alt="introText" />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- mainRow3끝 -->
+
+    <!-- mainRow4시작 -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          let $el = $(".mainRow4 ul.one li");
+
+          if ($(this).scrollTop() >= 3200) $el.addClass("shown");
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      .mainRow4 {
+        background-color: #f9f9f9;
+        padding: 150px 0;
+      }
+      .mainRow4 h3.title {
+        font-size: 50px;
+        line-height: 50px;
+        color: #222;
+        font-weight: 900;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .mainRow4 h3.title span {
+        color: #4b89dc;
+      }
+      .mainRow4 p.title {
+        font-size: 18px;
+        line-height: 18px;
+        color: #575757;
+        font-weight: 400;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .mainRow4 ul.one {
+        display: flex;
+        margin-bottom: 80px;
+      }
+      .mainRow4 ul.one li {
+        width: 32%;
+        margin-right: 2%;
+        visibility: hidden;
+      }
+      .mainRow4 ul.one li.shown {
+        visibility: visible;
+        animation: fadeInUp 1s;
+      }
+      .mainRow4 ul.one li:nth-child(2).shown {
+        animation-delay: 0.2s;
+        animation-fill-mode: both;
+      }
+      .mainRow4 ul.one li:nth-child(3).shown {
+        animation-delay: 0.5s;
+        animation-fill-mode: both;
+      }
+      .mainRow4 ul.one li:last-child {
+        margin-right: 0;
+      }
+      .mainRow4 ul.one li p.detail {
+        font-size: 18px;
+        line-height: 18px;
+        color: #4b89dc;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      /* row4Box */
+      .row4Box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .row4Box p {
+        margin-left: 20px;
+      }
+
+      /* row4Btn */
+      .row4Btn {
+        display: block;
+        width: 250px;
+        height: 50px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+      .row4Btn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-150%, -50%);
+        background-color: #4b89dc;
+        z-index: 0;
+        transition: all 0.5s;
+      }
+      .row4Btn:hover {
+        border: 1px solid #4b89dc;
+      }
+      .row4Btn:hover::before {
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .row4Btn:hover a {
+        color: #fff;
+      }
+      .row4Btn a {
+        font-size: 14px;
+        line-height: 48px;
+        color: #222;
+        font-weight: 500;
+        display: block;
+        letter-spacing: 0.5px;
+        text-align: center;
+        position: relative;
+      }
+
+      /* 반응형 */
+      @media screen and (max-width: 1440px) {
+        .mainRow4 h3.title {
+          font-size: 40px;
+          line-height: 40px;
+        }
+        .row4Btn {
+          width: 200px;
+          height: 40px;
+        }
+        .row4Btn a {
+          line-height: 38px;
+        }
+      }
+      @media screen and (max-width: 1080px) {
+        .mainRow4 h3.title {
+          font-size: 28px;
+          line-height: 28px;
+        }
+        .mainRow4 p.title {
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .mainRow4 {
+          padding: 100px 0;
+        }
+        .mainRow4 ul.one li {
+          visibility: visible;
+        }
+        .mainRow4 h3.title {
+          font-size: 22px;
+          line-height: 22px;
+          margin-bottom: 20px;
+        }
+        .mainRow4 ul.one li p.detail {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+      @media screen and (max-width: 550px) {
+        .mainRow4 p.title {
+          margin-bottom: 30px;
+        }
+        .mainRow4 ul.one {
+          flex-direction: column;
+          margin-bottom: 50px;
+        }
+        .mainRow4 ul.one li {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 50px;
+        }
+        .mainRow4 ul.one li:last-child {
+          margin-bottom: 0;
+        }
+        .row4Btn {
+          width: 100%;
+          height: 40px;
+        }
+        .row4Btn a {
+          line-height: 38px;
+        }
+      }
+    </style>
+
+    <div class="mainRow4" id="div4">
+      <div class="inner">
+        <h3 class="title">The <span>Contact</span></h3>
+        <p class="title">언제든 편하게 연락주세요</p>
+        <ul class="one">
+          <li>
+            <div class="row4Box">
+              <img src="./images/mainRow4Img1.png" alt="address" />
+              <p>Address</p>
+            </div>
+            <p class="detail">서울시 서초구 서초동</p>
+          </li>
+          <li>
+            <div class="row4Box">
+              <img src="./images/mainRow4Img2.png" alt="tel" />
+              <p>Phone</p>
+            </div>
+            <p class="detail">+82-10-9757-1994</p>
+          </li>
+          <li>
+            <div class="row4Box">
+              <img src="./images/mainRow4Img3.png" alt="mail" />
+              <p>E-mail</p>
+            </div>
+            <p class="detail">y940407@naver.com</p>
+          </li>
+        </ul>
+        <!-- row4Btn시작 -->
+        <div class="row4Btn">
+          <a href="mailto:y940407@naver.com"> Contact </a>
+        </div>
+        <!-- row4Btn끝 -->
+      </div>
+    </div>
+    <!-- mainRow4끝 -->
+
+    <!-- footer시작 -->
+    <style type="text/css">
+      #footer {
+        padding: 50px 0;
+      }
+      #footer h3 {
+        font-size: 15px;
+        line-height: 25px;
+        color: #575757;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      #footer p {
+        font-size: 15px;
+        line-height: 25px;
+        color: #888;
+        font-weight: 400;
+        text-align: center;
+      }
+    </style>
+
+    <footer id="footer">
+      <div class="inner">
+        <h3>
+          본 페이지는 상업적 목적이 아닌 <br />
+          개인 포트폴리용으로 제작되었습니다.
+        </h3>
+        <p>COPYRIGHT © YANG SI YUN. ALL RIGHT RESERVED</p>
+      </div>
+    </footer>
+    <!-- footer끝 -->
+  </body>
+</html>
